@@ -1,0 +1,18 @@
+# Override per usare le immagini pubblicate su GHCR invece del build locale.
+# Uso: docker compose -f docker-compose.yml -f docker-compose.ghcr.yml pull
+#      docker compose -f docker-compose.yml -f docker-compose.ghcr.yml up -d
+#
+# Tag versione: REPARTOIT_IMAGE_TAG=v0.1.0 docker compose -f docker-compose.yml -f docker-compose.ghcr.yml up -d
+
+services:
+  collector:
+    image: ghcr.io/sim1andr3/repartoit-siem-collector:${REPARTOIT_IMAGE_TAG:-latest}
+
+  dashboard:
+    image: ghcr.io/sim1andr3/repartoit-siem-dashboard:${REPARTOIT_IMAGE_TAG:-latest}
+
+  metrics-collector:
+    image: ghcr.io/sim1andr3/repartoit-metrics-collector:${REPARTOIT_IMAGE_TAG:-latest}
+
+  iac-ingest:
+    image: ghcr.io/sim1andr3/repartoit-iac-ingest:${REPARTOIT_IMAGE_TAG:-latest}
