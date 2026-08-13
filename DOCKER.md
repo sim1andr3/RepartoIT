@@ -11,10 +11,10 @@ docker pull ghcr.io/sim1andr3/repartoit-metrics-collector:latest
 docker pull ghcr.io/sim1andr3/repartoit-iac-ingest:latest
 ```
 
-## Tagged release (v0.1.54)
+## Tagged release (v0.1.55)
 
 ```bash
-export REPARTOIT_IMAGE_TAG=v0.1.54
+export REPARTOIT_IMAGE_TAG=v0.1.55
 docker pull ghcr.io/sim1andr3/repartoit-siem-collector:${REPARTOIT_IMAGE_TAG}
 ```
 
